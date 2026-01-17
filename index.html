@@ -1,0 +1,528 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Chheng Phana | Full-Stack Developer</title>
+  <meta name="description" content="Portfolio of Chheng Phana - Full-Stack & Frontend Developer from Cambodia"/>
+  <link rel="icon" href="image/photo_2025-04-23_21-44-05.jpg" type="image/jpeg">
+
+  <!-- Google Font: Sora -->
+  <link href="https://fonts.googleapis.com/css2?family=Sora:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+  <!-- Tailwind CSS -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: { 
+            primary: "#0ea5e9", 
+            dark: "#0f172a",
+            navy: "#0b1d3d",
+            darknavy: "#0b1a33",
+            gold: "#f59e0b",
+            brown: "#3f2b1a",
+            accent: "#22d3ee"
+          },
+          fontFamily: { sans: ['Sora', 'system-ui', 'sans-serif'] }
+        }
+      }
+    }
+  </script>
+
+  <!-- AOS Animation -->
+  <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+
+  <!-- Font Awesome -->
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" rel="stylesheet"/>
+
+  <style>
+    body {
+      background: linear-gradient(135deg, #f0f9ff 0%, #e0f2fe 40%, #cffafe 100%);
+      background-attachment: fixed;
+      position: relative;
+      overflow-x: hidden;
+    }
+
+    .particles {
+      position: fixed;
+      top: 0; left: 0;
+      width: 100%;
+      height: 100%;
+      pointer-events: none;
+      z-index: 1;
+    }
+    .particle {
+      position: absolute;
+      background: rgba(14, 165, 233, 0.1);
+      border-radius: 50%;
+      animation: float 15s infinite linear;
+    }
+    @keyframes float {
+      0% { transform: translateY(100vh) scale(0); opacity: 0; }
+      10% { opacity: 1; }
+      90% { opacity: 0.3; }
+      100% { transform: translateY(-100px) scale(1); opacity: 0; }
+    }
+
+    .typewriter {
+      overflow: hidden;
+      border-right: 3px solid #0ea5e9;
+      white-space: nowrap;
+      animation: typing 4s steps(50, end) forwards, blink 0.75s step-end infinite;
+    }
+    @keyframes typing { from { width: 0 } to { width: 100% } }
+    @keyframes blink { from, to { border-color: transparent } 50% { border-color: #0ea5e9; } }
+  </style>
+</head>
+
+<body class="text-gray-800 leading-relaxed antialiased relative">
+
+  <!-- Particle Background -->
+  <div class="particles" id="particles"></div>
+
+  <!-- Navigation -->
+  <nav class="fixed top-0 w-full bg-white/95 backdrop-blur-md shadow-sm z-50">
+    <div class="max-w-7xl mx-auto px-6 py-4 flex justify-between items-center">
+      <h1 class="text-xl font-semibold text-primary">Chheng Phana</h1>
+      <div class="space-x-8 hidden md:flex text-base font-medium">
+        <a href="#home" class="hover:text-primary transition">Home</a>
+        <a href="#certificate" class="hover:text-primary transition">Certificates</a>
+        <a href="#about" class="hover:text-primary transition">About</a>
+        <a href="#projects" class="hover:text-primary transition">Projects</a>
+        <a href="#contact" class="hover:text-primary transition">Contact</a>
+      </div>
+      <button class="md:hidden text-2xl" id="menu-btn"><i class="fas fa-bars"></i></button>
+    </div>
+  </nav>
+
+  <!-- Mobile Menu -->
+  <div class="fixed inset-0 bg-black/50 z-40 hidden" id="mobile-menu-overlay"></div>
+  <div class="fixed top-0 right-0 h-full w-64 bg-white shadow-2xl z-50 transform translate-x-full transition duration-300" id="mobile-menu">
+    <div class="p-6">
+      <button class="text-3xl mb-8 float-right" id="close-menu"><i class="fas fa-times"></i></button>
+      <div class="clear-both"></div>
+      <div class="flex flex-col space-y-6 text-lg font-medium mt-12">
+        <a href="#home" class="hover:text-primary">Home</a>
+        <a href="#about" class="hover:text-primary">About</a>
+        <a href="#projects" class="hover:text-primary">Projects</a>
+        <a href="#contact" class="hover:text-primary">Contact</a>
+      </div>
+    </div>
+  </div>
+
+  <!-- Hero Section -->
+  <section id="home" class="min-h-screen flex items-center justify-center py-20 relative z-10">
+    <div class="text-center px-6 max-w-4xl mx-auto">
+      <h2 data-aos="fade-down" class="text-4xl md:text-6xl font-bold text-dark mb-5">
+        Hi, I'm <span class="text-primary">Chheng Phana</span>
+      </h2>
+      <p data-aos="fade-up" data-aos-delay="200" class="text-xl md:text-3xl font-medium text-gray-700 mb-10 h-12">
+        <span class="typewriter inline-block">I build beautiful web experiences</span>
+      </p>
+      <div data-aos="zoom-in" data-aos-delay="400" class="flex justify-center my-12">
+        <img src="image/photo_2025-10-12_15-41-52 (2).jpg" alt="Chheng Phana" 
+             class="rounded-full shadow-2xl w-64 h-64 md:w-80 md:h-80 object-cover border-8 border-white"/>
+      </div>
+      <p data-aos="fade-up" data-aos-delay="600" class="text-lg md:text-xl text-gray-600 max-w-2xl mx-auto mb-10">
+        Full-Stack & Frontend Developer from Cambodia • Turning ideas into reality with clean code and modern design.
+      </p>
+      <div data-aos="fade-up" data-aos-delay="800" class="flex gap-5 justify-center flex-wrap">
+        <a href="#projects" class="bg-primary text-white px-8 py-4 rounded-full font-semibold hover:bg-sky-600 transition shadow-lg transform hover:scale-105">View My Work</a>
+        <a href="#contact" class="border-2 border-primary text-primary px-8 py-4 rounded-full font-semibold hover:bg-primary hover:text-white transition transform hover:scale-105">Get In Touch</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- About Section -->
+  <section id="about" class="py-24 bg-white">
+    <div class="max-w-7xl mx-auto px-6">
+      <h2 data-aos="fade-up" class="text-4xl md:text-5xl font-bold text-center mb-16 text-dark">About Me</h2>
+      <div class="grid md:grid-cols-2 gap-16 items-center">
+        <div data-aos="fade-right" data-aos-delay="200" class="text-center md:text-left">
+          <img src="image/photo_2025-10-12_15-41-52 (2).jpg" alt="Chheng Phana" class="rounded-3xl shadow-2xl mx-auto w-80 object-cover border-8 border-primary/10"/>
+        </div>
+        <div data-aos="fade-left" data-aos-delay="400">
+          <h3 class="text-2xl font-bold mb-6 text-primary">Hello! I'm Chheng Phana</h3>
+          <p class="text-gray-600 mb-6 leading-relaxed">
+            I'm a passionate Full-Stack Developer based in Cambodia with over 3 years of experience building modern, responsive, and user-friendly web applications.
+          </p>
+          <p class="text-gray-600 mb-8 leading-relaxed">
+            I love turning ideas into reality using clean code, beautiful design, and the latest technologies. Always learning, always improving.
+          </p>
+          <div class="grid grid-cols-2 gap-8">
+            <div data-aos="fade-up" data-aos-delay="100">
+              <h4 class="font-bold text-primary mb-2 text-lg">Frontend</h4>
+              <p class="text-gray-600">React, Vue, Tailwind, Next.js, TypeScript</p>
+            </div>
+            <div data-aos="fade-up" data-aos-delay="200">
+              <h4 class="font-bold text-primary mb-2 text-lg">Backend</h4>
+              <p class="text-gray-600">Node.js, Python, PHP, PostgreSQL, MongoDB</p>
+            </div>
+            <div data-aos="fade-up" data-aos-delay="300">
+              <h4 class="font-bold text-primary mb-2 text-lg">Tools</h4>
+              <p class="text-gray-600">Git, GitHub, Figma, VS Code, Postman</p>
+            </div>
+            <div data-aos="fade-up" data-aos-delay="400">
+              <h4 class="font-bold text-primary mb-2 text-lg">Passion</h4>
+              <p class="text-gray-600">Clean Code • UI/UX • Performance • Learning</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+ <!-- Certificate Section -->
+<section id="certificate" class="py-24 bg-white">
+  <div class="max-w-7xl mx-auto px-6">
+    <h2 class="text-4xl md:text-5xl font-bold text-center mb-16 text-dark">
+      Certificates
+    </h2>
+
+    <!-- Swiper Container -->
+    <div class="swiper-container" data-aos="fade-up">
+      <div class="swiper-wrapper">
+        <!-- Certificate 1 -->
+        <div class="swiper-slide flex flex-col items-center bg-white border border-primary/20 rounded-2xl shadow-lg p-6 hover:shadow-2xl transition-all hover:-translate-y-2 cursor-pointer certificate-item" data-img="image/Screenshot 2025-12-03 081333.png">
+          <img src="image/Screenshot 2025-12-03 081333.png" class="w-40 md:w-48 rounded-xl shadow-lg mb-4" alt="Web Development Certificate"/>
+          <h3 class="text-2xl font-bold text-primary mb-2 text-center">Web Development Certificate</h3>
+          <p class="text-gray-600 text-center text-sm">Issued by: Google</p>
+        </div>
+
+        <!-- Certificate 2 -->
+        <div class="swiper-slide flex flex-col items-center bg-white border border-primary/20 rounded-2xl shadow-lg p-6 hover:shadow-2xl transition-all hover:-translate-y-2 cursor-pointer certificate-item" data-img="image/Screenshot 2025-12-03 081654.png">
+          <img src="image/Screenshot 2025-12-03 081654.png" class="w-40 md:w-48 rounded-xl shadow-lg mb-4" alt="Full-Stack Developer"/>
+          <h3 class="text-2xl font-bold text-primary mb-2 text-center">Frontend Developer</h3>
+          <p class="text-gray-600 text-center text-sm">Issued by: Google</p>
+        </div>
+
+        <!-- Certificate 3 -->
+        <div class="swiper-slide flex flex-col items-center bg-white border border-primary/20 rounded-2xl shadow-lg p-6 hover:shadow-2xl transition-all hover:-translate-y-2 cursor-pointer certificate-item" data-img="image/Screenshot 2025-12-03 081654.png">
+          <img src="image/Screenshot 2025-12-03 081654.png" class="w-40 md:w-48 rounded-xl shadow-lg mb-4" alt="Cybersecurity Basics"/>
+          <h3 class="text-2xl font-bold text-primary mb-2 text-center">Cybersecurity Basics</h3>
+          <p class="text-gray-600 text-center text-sm">Issued by: Google</p>
+        </div>
+      </div>
+
+      <!-- Swiper Navigation -->
+      <div class="swiper-button-next text-primary"></div>
+      <div class="swiper-button-prev text-primary"></div>
+      <div class="swiper-pagination mt-6"></div>
+    </div>
+  </div>
+</section>
+
+<!-- Modal for Certificate -->
+<div id="certificate-modal" class="fixed inset-0 bg-black/70 hidden items-center justify-center z-50">
+  <div class="bg-white rounded-xl p-4 max-w-3xl w-full relative">
+    <button id="modal-close" class="absolute top-2 right-2 text-2xl font-bold">&times;</button>
+    <img id="modal-img" src="" alt="Certificate" class="w-full h-auto rounded-xl"/>
+  </div>
+</div>
+
+<!-- Swiper JS -->
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.css" />
+<script src="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.js"></script>
+<script>
+  // Initialize Swiper
+  const swiper = new Swiper('.swiper-container', {
+    slidesPerView: 1,
+    spaceBetween: 20,
+    loop: true,
+    autoplay: {
+      delay: 3000,
+      disableOnInteraction: false,
+    },
+    pagination: {
+      el: '.swiper-pagination',
+      clickable: true,
+    },
+    navigation: {
+      nextEl: '.swiper-button-next',
+      prevEl: '.swiper-button-prev',
+    },
+    breakpoints: {
+      640: { slidesPerView: 1 },
+      768: { slidesPerView: 2 },
+      1024: { slidesPerView: 3 },
+    },
+  });
+
+  // Modal logic
+  const modal = document.getElementById('certificate-modal');
+  const modalImg = document.getElementById('modal-img');
+  const closeModal = document.getElementById('modal-close');
+  const items = document.querySelectorAll('.certificate-item');
+
+  items.forEach(item => {
+    item.addEventListener('click', () => {
+      const imgSrc = item.getAttribute('data-img');
+      modalImg.src = imgSrc;
+      modal.classList.remove('hidden');
+      modal.classList.add('flex');
+    });
+  });
+
+  closeModal.addEventListener('click', () => {
+    modal.classList.add('hidden');
+    modal.classList.remove('flex');
+  });
+
+  modal.addEventListener('click', (e) => {
+    if (e.target === modal) {
+      modal.classList.add('hidden');
+      modal.classList.remove('flex');
+    }
+  });
+</script>
+
+
+      </div>
+
+      <!-- Swiper Navigation -->
+      <div class="swiper-button-next text-primary"></div>
+      <div class="swiper-button-prev text-primary"></div>
+      <div class="swiper-pagination mt-6"></div>
+    </div>
+  </div>
+</section>
+
+<!-- Swiper JS -->
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.css" />
+<script src="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.js"></script>
+<script>
+  const swiper = new Swiper('.swiper-container', {
+    slidesPerView: 1,
+    spaceBetween: 30,
+    loop: true,
+    pagination: { el: '.swiper-pagination', clickable: true },
+    navigation: { nextEl: '.swiper-button-next', prevEl: '.swiper-button-prev' },
+    breakpoints: {
+      640: { slidesPerView: 1 },
+      768: { slidesPerView: 1 },
+      1024: { slidesPerView: 2 },
+    },
+  });
+</script>
+
+
+      </div>
+
+      <!-- Swiper Navigation -->
+      <div class="swiper-button-next text-primary"></div>
+      <div class="swiper-button-prev text-primary"></div>
+      <div class="swiper-pagination mt-6"></div>
+    </div>
+  </div>
+</section>
+
+<!-- Swiper JS -->
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.css" />
+<script src="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.js"></script>
+<script>
+  const swiper = new Swiper('.swiper-container', {
+    slidesPerView: 1,
+    spaceBetween: 20,
+    loop: true,
+    pagination: {
+      el: '.swiper-pagination',
+      clickable: true,
+    },
+    navigation: {
+      nextEl: '.swiper-button-next',
+      prevEl: '.swiper-button-prev',
+    },
+    breakpoints: {
+      640: { slidesPerView: 1 },
+      768: { slidesPerView: 2 },
+      1024: { slidesPerView: 3 },
+    },
+  });
+</script>
+
+    </div>
+  </div>
+</section>
+
+
+  <!-- Projects Section -->
+  <section id="projects" class="py-24 bg-gray-50/80">
+    <div class="max-w-7xl mx-auto px-6">
+      <h2 data-aos="fade-up" class="text-4xl md:text-5xl font-bold text-center mb-16 text-dark">Featured Projects</h2>
+      <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-10">
+        <!-- Project 1 -->
+        <div data-aos="fade-up" data-aos-delay="100" class="bg-white rounded-2xl shadow-xl overflow-hidden hover:shadow-2xl transition-all duration-500 transform hover:-translate-y-3 group">
+          <div class="overflow-hidden">
+            <img src="https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=600&h=400&fit=crop" alt="E-commerce" class="w-full h-52 object-cover group-hover:scale-110 transition duration-700"/>
+          </div>
+          <div class="p-7">
+            <h3 class="text-2xl font-bold mb-3">E-commerce Platform</h3>
+            <p class="text-gray-600 mb-5">forntend online store with cart, payment gateway, and admin dashboard.</p>
+            <div class="flex flex-wrap gap-3 mb-6">
+              <span class="px-4 py-2 bg-primary/10 text-primary rounded-full text-sm font-medium">HTML</span>
+              <span class="px-4 py-2 bg-primary/10 text-primary rounded-full text-sm font-medium">CSS</span>
+              <span class="px-4 py-2 bg-primary/10 text-primary rounded-full text-sm font-medium">JavaScript</span>
+            </div>
+            <div class="flex gap-6">
+              <a href="https://github.com/phanaspi19" target="_blank" class="text-primary font-bold flex items-center gap-2 hover:gap-3 transition-all"><i class="fab fa-github text-xl"></i> Code</a>
+              <a href="#" class="text-primary font-bold flex items-center gap-2 hover:gap-3 transition-all"><i class="fas fa-external-link-alt text-lg"></i> Live Demo</a>
+            </div>
+          </div>
+        </div>
+
+        <!-- Project 2 -->
+        <div data-aos="fade-up" data-aos-delay="200" class="bg-white rounded-2xl shadow-xl overflow-hidden hover:shadow-2xl transition-all duration-500 transform hover:-translate-y-3 group">
+          <div class="overflow-hidden">
+            <img src="image/photo_2025-04-23_21-44-05.jpg" alt="School System" class="w-full h-52 object-cover group-hover:scale-110 transition duration-700"/>
+          </div>
+          <div class="p-7">
+            <h3 class="text-2xl font-bold mb-3">High School Website</h3>
+            <p class="text-gray-600 mb-5">Modern school management system with student portal and teacher dashboard.</p>
+            <div class="flex flex-wrap gap-3 mb-6">
+              <span class="px-4 py-2 bg-primary/10 text-primary rounded-full text-sm font-medium">React</span>
+              <span class="px-4 py-2 bg-primary/10 text-primary rounded-full text-sm font-medium">Tailwind</span>
+              <span class="px-4 py-2 bg-primary/10 text-primary rounded-full text-sm font-medium">Node.js</span>
+            </div>
+            <div class="flex gap-6">
+              <a href="https://github.com/phanaspi19" target="_blank" class="text-primary font-bold flex items-center gap-2 hover:gap-3 transition-all"><i class="fab fa-github text-xl"></i> Code</a>
+              <a href="#" class="text-primary font-bold flex items-center gap-2 hover:gap-3 transition-all"><i class="fas fa-external-link-alt text-lg"></i> Live Demo</a>
+            </div>
+          </div>
+        </div>
+
+        <!-- Project 3 -->
+        <div data-aos="fade-up" data-aos-delay="300" class="bg-white rounded-2xl shadow-xl overflow-hidden hover:shadow-2xl transition-all duration-500 transform hover:-translate-y-3 group">
+          <div class="overflow-hidden">
+            <img src="image/team-work.jpg" alt="Student Management" class="w-full h-52 object-cover group-hover:scale-110 transition duration-700"/>
+          </div>
+          <div class="p-7">
+            <h3 class="text-2xl font-bold mb-3">Student Management System</h3>
+            <p class="text-gray-600 mb-5">Complete student information system with attendance, grades, reports.</p>
+            <div class="flex flex-wrap gap-3 mb-6">
+              <span class="px-4 py-2 bg-primary/10 text-primary rounded-full text-sm font-medium">React</span>
+              <span class="px-4 py-2 bg-primary/10 text-primary rounded-full text-sm font-medium">Node.js</span>
+              <span class="px-4 py-2 bg-primary/10 text-primary rounded-full text-sm font-medium">MongoDB</span>
+            </div>
+            <div class="flex gap-6">
+              <a href="https://github.com/PruonhOn/SMS-system.git" target="_blank" class="text-primary font-bold flex items-center gap-2 hover:gap-3 transition-all"><i class="fab fa-github text-xl"></i> Code</a>
+            
+              <a href="#" class="text-primary font-bold flex items-center gap-2 hover:gap-3 transition-all"><i class="fas fa-external-link-alt text-lg"></i> Live Demo</a>
+               
+            </div>
+             <span style="color: skyblue; background-color: brown;"> You can Clone for use, if you Student in SPI!</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  
+  <footer id="contact" class="bg-navy text-white mt-20">
+    <!-- Main Content -->
+    <div class="py-16">
+      <div class="max-w-7xl mx-auto px-6 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-10 text-center md:text-left">
+
+        <!-- About Us -->
+        <div data-aos="fade-up">
+          <h3 class="text-2xl font-bold mb-4 border-b-4 border-gold inline-block pb-1">About Us</h3>
+          <p class="text-sky-100 text-sm leading-relaxed">
+            
+          </p>
+        </div>
+
+        <!-- Contact Us -->
+        <div data-aos="fade-up" data-aos-delay="100">
+          <h3 class="text-2xl font-bold mb-4 border-b-4 border-gold inline-block pb-1">Contact Us</h3>
+          <ul class="space-y-3 text-sky-100 text-sm">
+            <li>• phana.spi.eu@gmail.com</li>
+            <li>• +855 712919783 , +855 96 9050 864</li>
+            <li>• #3, Angkorki, Tapem, Tramkok, Takeo</li>
+          </ul>
+        </div>
+
+        <!-- Download -->
+        <div data-aos="fade-up" data-aos-delay="200">
+          <h3 class="text-2xl font-bold mb-4 border-b-4 border-gold inline-block pb-1">Download</h3>
+          <ul class="space-y-2 text-sky-100 text-sm">
+            <li><a href="#" class="hover:text-gold transition">Enrollment Form</a></li>
+            <li><a href="#" class="hover:text-gold transition">Request Form</a></li>
+            <li><a href="#" class="hover:text-gold transition font-semibold">Thesis Guideline</a></li>
+            <li><a href="#" class="hover:text-gold transition">Permission Request</a></li>
+            <li><a href="#" class="hover:text-gold transition">Examination Request Form</a></li>
+            <li><a href="#" class="hover:text-gold transition">Student Hand Book</a></li>
+          </ul>
+        </div>
+
+        <!-- Jubilee Year 2025 -->
+        <div data-aos="fade-up" data-aos-delay="300" class="text-center">
+          <h3 class="text-2xl font-bold mb-6 border-b-4 border-gold inline-block pb-1">Jubilee Year 2025</h3>
+          <div class="flex justify-center gap-6">
+            <img src="image/photo_2025-04-23_21-44-05.jpg" alt="SPI Jubilee 2025" class="w-32 h-32 object-contain hover:scale-110 transition">
+            <img src="image/photo_2025-10-12_15-41-52 (2).jpg" alt="Pilgrims of Hope" class="w-32 h-32 object-contain hover:scale-110 transition">
+          </div>
+        </div>
+      </div>
+
+      <!-- Social Icons -->
+      <div class="flex justify-center gap-8 mt-12 text-4xl">
+        <a href="#" class="bg-white text-navy w-14 h-14 rounded-full flex items-center justify-center hover:bg-gold hover:text-white transition transform hover:scale-110 shadow-lg">
+          <i class="fab fa-facebook-f"></i>
+        </a>
+        <a href="#" class="bg-white text-navy w-14 h-14 rounded-full flex items-center justify-center hover:bg-gold hover:text-white transition transform hover:scale-110 shadow-lg">
+          <i class="fab fa-telegram-plane"></i>
+        </a>
+        <a href="#" class="bg-white text-navy w-14 h-14 rounded-full flex items-center justify-center hover:bg-gold hover:text-white transition transform hover:scale-110 shadow-lg">
+          <i class="fab fa-youtube"></i>
+        </a>
+      </div>
+    </div>
+
+    <!-- Brown Copyright Bar -->
+    <div class="bg-brown text-white py-6 text-center text-xs md:text-sm border-t border-gold/30">
+      <p class="font-bold">
+      Chheng Phana © 2025. All rights reserved.
+      </p>
+      <p class="mt-2">
+        National Road 3, Angkorki Village, Tapem Commune, Tramkok District, Takeo Province, Cambodia.<br>
+        Tel: +855 712919783 , +855 96 9050 864 email: phana.spi.eu@gmail.com
+      </p>
+    </div>
+  </footer>
+
+  <!-- Scripts -->
+  <script>
+    AOS.init({ duration: 1000, once: true });
+
+    // Mobile Menu
+    const menuBtn = document.getElementById('menu-btn');
+    const mobileMenu = document.getElementById('mobile-menu');
+    const overlay = document.getElementById('mobile-menu-overlay');
+    const closeBtn = document.getElementById('close-menu');
+
+    if (menuBtn) {
+      menuBtn.onclick = () => { 
+        mobileMenu.classList.remove('translate-x-full'); 
+        overlay.classList.remove('hidden'); 
+      };
+      closeBtn.onclick = overlay.onclick = () => { 
+        mobileMenu.classList.add('translate-x-full'); 
+        overlay.classList.add('hidden'); 
+      };
+    }
+
+    // Particle Effect
+    function createParticle() {
+      const p = document.createElement('div');
+      p.classList.add('particle');
+      p.style.width = p.style.height = Math.random() * 8 + 4 + 'px';
+      p.style.left = Math.random() * 100 + 'vw';
+      p.style.animationDuration = Math.random() * 10 + 10 + 's';
+      p.style.animationDelay = Math.random() * 5 + 's';
+      document.getElementById('particles').appendChild(p);
+      setTimeout(() => p.remove(), 20000);
+    }
+    setInterval(createParticle, 800);
+  </script>
+</body>
+</html>
